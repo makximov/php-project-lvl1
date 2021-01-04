@@ -6,5 +6,9 @@
             "email": "makx.work@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "description": "test project",
+    "bin": [
+        "bin/brain-games"
+    ]
 }
