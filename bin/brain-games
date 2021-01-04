@@ -1,5 +1,7 @@
 #!/usr/bin/env php
 
-<?php declare(strict_types=1);
+<?php
 
-echo 'Welcome to the Brain Games!';
+require_once __DIR__ .'/../vendor/autoload.php';
+
+Brain\Games\Cli::run();
