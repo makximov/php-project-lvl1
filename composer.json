@@ -17,5 +17,11 @@
         "psr-4": {
             "Brain\\Games\\": "src"
         }
+    },
+    "scripts": {
+        "phpcs": "phpcs"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.5"
     }
 }
