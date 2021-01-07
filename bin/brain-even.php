@@ -14,14 +14,17 @@ line('Answer "yes" if the number is even, otherwise answer "no".');
 $game = true;
 $count = 0;
 
+const ANSWER_YES = 'yes';
+const ANSWER_NO = 'no';
+
 do {
     $questionNumber = random_int(0, 100);
-    $correctAnswer = $questionNumber & 1 ? 'no' : 'yes';
+    $correctAnswer = $questionNumber & 1 ? ANSWER_NO : ANSWER_YES;
 
     line(sprintf('Question: %d', $questionNumber));
     $answer = prompt('Your answer: ');
 
-    if ( ! in_array($answer, ['yes', 'no'])) {
+    if ( ! in_array($answer, [ANSWER_YES, ANSWER_NO])) {
         $game = false;
     } else {
 
