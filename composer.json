@@ -7,11 +7,13 @@
         }
     ],
     "require": {
+        "php": "^7.4",
         "wp-cli/php-cli-tools": "^0.11.11"
     },
     "description": "test project",
     "bin": [
-        "bin/brain-games"
+        "bin/brain-games",
+        "bin/brain-even"
     ],
     "autoload": {
         "psr-4": {
