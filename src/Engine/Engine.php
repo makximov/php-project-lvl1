@@ -36,9 +36,7 @@ final class Engine implements EngineInterface
             line($gameRound->question);
             $playerAnswer = prompt('Your answer: ');
 
-            $correctAnswer = $gameRound->answer;
-
-            $this->checkAnswer($playerAnswer, $correctAnswer, $playerName);
+            $this->checkAnswer($playerAnswer, $gameRound->answer, $playerName);
 
             $this->gameStep++;
 
