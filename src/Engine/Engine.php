@@ -23,7 +23,7 @@ final class Engine implements EngineInterface
         $this->cli = $cli;
     }
 
-    public function run()
+    public function run(): void
     {
         $playerName = $this->cli->getPlayerName();
 
@@ -38,13 +38,7 @@ final class Engine implements EngineInterface
 
             $correctAnswer = $gameRound->answer;
 
-            if ($playerAnswer === $correctAnswer) {
-                line('Correct!');
-            } else {
-                line('\'%s\' is wrong answer ;(. Correct answer was \'%s\'.', $playerAnswer, $correctAnswer);
-                line('Let\'s try again, %s!', $playerName);
-                $this->gameContinue = false;
-            }
+            $this->checkAnswer($playerAnswer, $correctAnswer, $playerName);
 
             $this->gameStep++;
 
@@ -52,6 +46,17 @@ final class Engine implements EngineInterface
 
         if ($this->gameContinue) {
             line('Congratulations, %s!', $playerName);
+        }
+    }
+
+    private function checkAnswer(string $playerAnswer, string $correctAnswer, string $playerName): void
+    {
+        if ($playerAnswer === $correctAnswer) {
+            line('Correct!');
+        } else {
+            line('\'%s\' is wrong answer ;(. Correct answer was \'%s\'.', $playerAnswer, $correctAnswer);
+            line('Let\'s try again, %s!', $playerName);
+            $this->gameContinue = false;
         }
     }
 }
